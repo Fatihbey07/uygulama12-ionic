@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <p>Yeni Görev Ekle</p>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="frm" (ngSubmit)="Kaydet()">
+    <ion-list>
+      <ion-list-header lines="full">
+        <label>Yeni Görev Kayıt Et</label>
+      </ion-list-header>
+      <ion-item>
+        <label>Başlık:</label>
+        <ion-input #baslik type="text" formControlName="baslik"></ion-input>
+      </ion-item>
+      <ion-item>
+        <label>Detay:</label>
+        <ion-textarea #aciklama formControlName="aciklama"></ion-textarea
+      ></ion-item>
+      <ion-item
+        ><ion-checkbox #tamam formControlName="tamam"></ion-checkbox>
+        <ion-label>Tamamlandı</ion-label></ion-item
+      >
+    </ion-list>
+    <ion-button type="submit">Kaydet</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "uygulama12",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

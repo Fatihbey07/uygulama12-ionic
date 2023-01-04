@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mevcut</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let gorev of mevcutGorevler">
+    <ion-list-header>
+      <ion-label>{{gorev.baslik}}</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <p>{{gorev.aciklama}}</p>
+    </ion-item>
+    <ion-item>
+      <ion-button color="success" (click)="TamamIptal(gorev,true)"
+        >Tamamla</ion-button
+      >
+      <ion-button color="danger" (click)="Sil(gorev)">Sil</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

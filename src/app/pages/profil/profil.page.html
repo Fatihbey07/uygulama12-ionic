@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profil</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="frm" (ngSubmit)="Kaydet()">
+    <ion-card>
+      <ion-card-header *ngIf="uye | async as user">
+        <img [src]="user.foto ?? 'assets/profil.png'" />
+        <input
+          #inputField
+          type="file"
+          hidden
+          (change)="ResimYukle($event, user)"
+        />
+        <ion-item>
+          <ion-button (click)="inputField.click()">
+            Fotoğraf Ekle veya Değiştir
+          </ion-button></ion-item
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>Adı Soyadı</ion-label>
+        <ion-input type="text" formControlName="displayName"></ion-input>
+        <ion-label>E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+        <ion-label>Telefon</ion-label>
+        <ion-input type="text" formControlName="tel"></ion-input>
+        <ion-input color="success" type="submit" value="Kaydet"></ion-input>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>

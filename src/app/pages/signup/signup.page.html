@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Kaydol</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-title>Lütfen Giriş Yapınız</ion-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label position="floating">Ad Soyad</ion-label>
+      <ion-input type="text" #adsoyad></ion-input>
+      <ion-label position="floating">E-mail</ion-label>
+      <ion-input type="email" #mail></ion-input>
+      <ion-label position="floating">Şifre</ion-label>
+      <ion-input type="password" #parola></ion-input>
+      
+    </ion-card-content>
+    <ion-item>
+      <ion-button (click)="UyeOl(adsoyad.value,mail.value,parola.value)">Kaydol</ion-button>
+    </ion-item>
+  </ion-card>
+</ion-content>
