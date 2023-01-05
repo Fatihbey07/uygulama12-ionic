@@ -10,18 +10,16 @@ import { switchMap } from 'rxjs';
   styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-
   constructor(
     public fbServis: FbservisService,
     public htoast: HotToastService,
     public router: Router
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   UyeOl(adsoyad: any, email: any, parola: any) {
-    this.fbServis.
-      KayitOl(email, parola)
+    this.fbServis
+      .KayitOl(email, parola)
       .pipe(
         switchMap(({ user: { uid } }) =>
           this.fbServis.UyeEkle({ uid, email, displayName: adsoyad })
@@ -30,7 +28,6 @@ export class SignupPage implements OnInit {
           success: 'Tebrikler Kayıt Yapıldı',
           loading: 'Kayıt Yapılıyor...',
           error: ({ message }) => `${message}`,
-          
         })
       )
       .subscribe(() => {
@@ -38,5 +35,7 @@ export class SignupPage implements OnInit {
       });
   }
 
-
+  Login() {
+    this.router.navigate(['login']);
+  }
 }

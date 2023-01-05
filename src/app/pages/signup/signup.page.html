@@ -16,10 +16,12 @@
       <ion-input type="email" #mail></ion-input>
       <ion-label position="floating">Şifre</ion-label>
       <ion-input type="password" #parola></ion-input>
-      
     </ion-card-content>
     <ion-item>
-      <ion-button (click)="UyeOl(adsoyad.value,mail.value,parola.value)">Kaydol</ion-button>
+      <ion-button (click)="UyeOl(adsoyad.value,mail.value,parola.value)"
+        >Kaydol</ion-button
+      >
+      <ion-button (click)="Login()">Zaten Hesabım var</ion-button>
     </ion-item>
   </ion-card>
 </ion-content>
